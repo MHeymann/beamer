@@ -1,6 +1,7 @@
 \documentclass{beamer}
 
-\usetheme{Berlin}
+\usepackage{tikz}
+%\usetheme{Berlin}
 
 \title{Some random beamer}
 \subtitle{Yes, there is a lot you can do (and do)}
@@ -65,6 +66,52 @@
 		\item
 			And in the darkness bind them
 	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{T\textit{i}kZ}
+	\framesubtitle{T\textit{i}kZ ist kein Zeichnungprogram}
+\end{frame}
+\begin{frame}
+	\frametitle{T\textit{i}kZ}
+	\url{texample.net}
+
+	\begin{figure}
+		\begin{tikzpicture}[scale=0.5]
+		\fill[yellow,draw] (-0.5,0) rectangle (0.5,1.5);
+			\draw[ultra thick] (0,0) circle (3pt);
+			\draw[thick] (-2, 0) circle(7pt);
+		\fill (2,0) circle (5pt);
+		\fill[red] (0, 2) circle (7pt)
+				   (0,-2) circle (11pt);
+	\end{tikzpicture}
+		\caption{A T\textit{i}kZ drawing}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Connecting things}
+
+	\begin{figure}
+		\begin{tikzpicture}
+			\draw[step=0.25, color=gray] (-3,-3) grid (3,3);
+			\draw[very thick, red, rounded corners]
+				(1,0) -- (0, 1) -- (-1, 0) -- (0, -1) -- cycle;
+			% color mixing below:  50 % blue, complement red
+			\draw[ultra thick, blue!50!red, ->] 
+				(0,0) -- (60:1cm);
+			\draw[ultra thick, green!50!black, ->>] (0,0) -- (120:2cm);
+			\path (0:3cm) coordinate (P0);
+			\path (1*72:3cm) coordinate (P1);
+			\path (2*72:3cm) coordinate (P2);
+			\path (3*72:3cm) coordinate (P3);
+			\path (4*72:3cm) coordinate (P4);
+			\draw[ultra thick] (P0) -- (P1) -- (P2) -- (P3) -- (P4) -- cycle;
+			\foreach \i in {0,...,4}
+				\draw[ultra thick, blue!50!green] (0,0) -- (P\i);
+		\end{tikzpicture}
+		\caption{bla}
+	\end{figure}
 \end{frame}
 
 \end{document}
