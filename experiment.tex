@@ -1,0 +1,70 @@
+\documentclass{beamer}
+
+\usetheme{Berlin}
+
+\title{Some random beamer}
+\subtitle{Yes, there is a lot you can do (and do)}
+\author{Murray Heymann}
+\institute{University of Stellenbosch}
+\date{today}
+
+\definecolor{USmaroon}{rgb}{0.55555, 0.058888, 0.17}
+\usecolortheme[named=USmaroon]{structure}
+
+
+\setbeamertemplate{navigation symbols}{}
+
+\pgfdeclareimage[height=1cm]{university-logo}{uslogo.pdf}
+\logo{\pgfuseimage{university-logo}}
+
+\begin{document}
+
+\section{Everything is awesome}
+
+\begin{frame}
+	\titlepage
+\end{frame}
+
+\begin{frame}
+	\frametitle{There is no largest prime}
+	\framesubtitle{This proof uses \emph{reduction ad absurdum}}
+
+	\begin{theorem}
+		There is no largest prime number
+	\end{theorem}
+
+
+	\begin{proof}
+		\begin{itemize}
+			\item<1->
+				Suppose $P = \{p_{1}, p_{2}, \dotsc, p_{r}\}$ are all the
+				primes
+			\item<2-3>
+				Let $q = p_{1} p_{2} \dotsb p_{r}$
+			\item<3> Let $p$ be a prime dividing $q+1$
+			\item<4-> The $p \not \in P$, since then we would have $p \mid (q + 1 - q)$
+			\item<1-> So $P$ cannot be all the primes
+		\end{itemize}
+	\end{proof}
+\end{frame}
+
+\section{Lord of the rings}
+
+\begin{frame}
+	\frametitle{Another one}
+	\framesubtitle{let's have a look}
+
+
+	\begin{itemize}
+		\item
+			One Ring to rule them all
+		\item
+			One Ring to find them
+		\item
+			One Ring to bring them all
+		\item
+			And in the darkness bind them
+	\end{itemize}
+\end{frame}
+
+\end{document}
