@@ -1,7 +1,7 @@
 \documentclass{beamer}
 
 \usepackage{tikz}
-%\usetheme{Berlin}
+\usetheme{metropolis}
 
 \title{Some random beamer}
 \subtitle{Yes, there is a lot you can do (and do)}
@@ -113,5 +113,68 @@
 		\caption{bla}
 	\end{figure}
 \end{frame}
+
+\begin{frame}
+	\frametitle{Playing with nodes}
+	
+	\begin{figure}
+		\begin{tikzpicture}
+			\node[circle, fill=red!20, draw, very thick]
+				(c1) at (0, 0) {Circle};
+			\node[rectangle, fill=blue!20, draw, thick]
+				(r1) at (-2, -2) {Rectangle};
+			\draw[very thick, ->, rounded corners] (c1) -- (c1|-r1) -- (r1);
+			\foreach \i in {0,...,4}
+				\draw (0,0) -- (\i*72:3cm) node [fill=green!20, circle] (v\i) {$v_{\i}$};
+		\end{tikzpicture}
+		\caption{Nodes}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Scope}
+
+	\begin{figure}	
+		\begin{tikzpicture}
+			\clip(0,0) circle (1cm);
+			\fill[black] (0, 1) rectangle (-1, -1);
+			\fill[black] (0, 0.5) circle (0.5cm);
+			\fill[white] (0, -0.5) circle (0.5cm);
+			\fill[white] (0, 0.5) circle (3pt);
+			\fill[black] (0, -0.5) circle (3pt);
+			\draw (0,0) circle (1cm);
+		\end{tikzpicture}
+		\caption{An illustration of scope.}
+	\end{figure}	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Curved connections}
+
+	\begin{figure}
+		\begin{tikzpicture}
+			\draw (0,0) .. controls (1,5) and (-4, -1) .. (7,1);
+			\fill[red] (0,0) circle (2pt)
+					   (7,1) circle (2pt);
+			\fill[blue] (1,5) circle (2pt)
+						(-4,-1) circle (2pt);
+
+			\draw[green] (0:1cm) -- (0: 2cm) arc(0:60:2cm) -- 
+				  (60:1cm) arc(60:0:1cm) -- cycle;
+		\end{tikzpicture}
+		\caption{Curved connections.}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\begin{tikzpicture}
+		\draw plot file{sin.out};
+		\draw[->] (-1, 0) -- (7, 0);
+		\draw[->] (0, -1) -- (0, 2);
+	\end{tikzpicture}
+
+\end{frame}
+
+
 
 \end{document}
