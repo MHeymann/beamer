@@ -3,6 +3,41 @@
 \usepackage{tikz}
 \usetheme{metropolis}
 
+%\setbeamertemplate{frametitle}
+%{\begin{centering}\smallskip
+%	\insertframetitle\par
+%\smallskip\end{centering}}
+%\setbeamertemplate{itemize item}{$\bullet$}
+%\setbeamertemplate{navigation symbols}{}
+%\setbeamertemplate{footline}[text line]{%
+%	\hfill\strut{%
+%		\scriptsize\sf\color{black!60}%
+%\quad\insertframenumber
+%}%
+%\hfill
+%}
+%
+%% Define some colors:
+%\definecolor{DarkFern}{HTML}{407428}
+%\definecolor{DarkCharcoal}{HTML}{4D4944}
+%\colorlet{Fern}{DarkFern!85!white}
+%\colorlet{Charcoal}{DarkCharcoal!85!white}
+%\colorlet{LightCharcoal}{Charcoal!50!white}
+%\colorlet{AlertColor}{orange!80!black}
+%\colorlet{DarkRed}{red!70!black}
+%\colorlet{DarkBlue}{blue!70!black}
+%\colorlet{DarkGreen}{green!70!black}
+%
+%% Use the colors:
+%\setbeamercolor{title}{fg=Fern}
+%\setbeamercolor{frametitle}{fg=Fern}
+%\setbeamercolor{normal text}{fg=Charcoal}
+%\setbeamercolor{block title}{fg=black,bg=Fern!25!white}
+%\setbeamercolor{block body}{fg=black,bg=Fern!25!white}
+%\setbeamercolor{alerted text}{fg=AlertColor}
+%\setbeamercolor{itemize item}{fg=Charcoal}
+%
+
 \title{Some random beamer}
 \subtitle{Yes, there is a lot you can do (and do)}
 \author{Murray Heymann}
@@ -17,6 +52,8 @@
 
 \pgfdeclareimage[height=1cm]{university-logo}{uslogo.pdf}
 \logo{\pgfuseimage{university-logo}}
+
+\setbeamertemplate{bibliography item}{\insertbiblabel}
 
 \begin{document}
 
@@ -110,7 +147,7 @@
 			\foreach \i in {0,...,4}
 				\draw[ultra thick, blue!50!green] (0,0) -- (P\i);
 		\end{tikzpicture}
-		\caption{bla}
+		\caption{bla\cite{boom}}
 	\end{figure}
 \end{frame}
 
@@ -175,6 +212,12 @@
 
 \end{frame}
 
-
+\begin{frame}
+	\frametitle{References}
+	\begin{thebibliography}{1}
+		\bibitem{koblitz} Kobliz
+		\bibitem{boom} Boom
+	\end{thebibliography}
+\end{frame}
 
 \end{document}
